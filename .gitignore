@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+.env
+cypress/videos/
+cypress/screenshots/
+dist/
+.DS_Store
+Thumbs.db

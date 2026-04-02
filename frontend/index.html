@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet QA Lab</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Wallet QA Lab</h1>
+    <p class="subtitle">Simulation de transfert crypto multi-wallet</p>
+
+    <section class="card">
+      <h2>État des wallets</h2>
+      <div class="wallets">
+        <div class="wallet" data-testid="wallet-1">
+          <h3>Wallet 1</h3>
+          <p>Chaîne : <span id="wallet1-chain">ethereum</span></p>
+          <p>Solde : <strong id="wallet1-balance">1000</strong></p>
+        </div>
+
+        <div class="wallet" data-testid="wallet-2">
+          <h3>Wallet 2</h3>
+          <p>Chaîne : <span id="wallet2-chain">polygon</span></p>
+          <p>Solde : <strong id="wallet2-balance">300</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Effectuer un transfert</h2>
+
+      <form id="transfer-form">
+        <div class="form-group">
+          <label for="amount">Montant</label>
+          <input
+            id="amount"
+            name="amount"
+            type="number"
+            step="1"
+            placeholder="Ex: 200"
+            required
+          />
+        </div>
+
+        <button id="transfer-btn" type="submit">Transférer de Wallet 1 vers Wallet 2</button>
+      </form>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Historique des transactions</h2>
+      <ul id="transactions-list" class="transactions-list"></ul>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
